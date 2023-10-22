@@ -1,0 +1,13 @@
+const mongoose = require("mongoose");
+require("dotenv").config();
+const mongoDbString = "mongodb://localhost:27017/realstate";
+
+const connectDB = async () =>
+  await Promise.all([
+    mongoose.connect(mongoDbString, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }),
+  ]);
+
+module.exports = connectDB;
